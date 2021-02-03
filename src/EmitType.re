@@ -73,7 +73,7 @@ let interfaceName = (~config, name) =>
   config.exportInterfaces ? "I" ++ name : name;
 
 let typeReactComponent = (~config, ~propsType) =>
-  (config.language == Flow ? "React$ComponentType" : "React.ComponentType")
+  (config.language == Flow ? "React$FunctionComponent" : "React.FunctionComponent")
   |> ident(~builtin=true, ~typeArgs=[propsType]);
 
 let typeReactContext = (~config, ~type_) =>
